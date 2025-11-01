@@ -23,9 +23,9 @@ $(document).ready(function() {
             $("#backToTop").fadeOut();
         }
     });
-    $("#backTop").click(function(){
+    $("#backToTop").click(function(){
         $("html, body").animate({scrollTop: 0}, 600);
         return false;
     });
-    
+
 });
