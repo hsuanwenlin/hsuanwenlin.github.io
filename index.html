@@ -1,20 +1,61 @@
 <!DOCTYPE html>
-<html lange="en">
+<html lange="zh-Hant">
 <head>
     <meta charset="UTF-8">
     <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-
+    <title>林宣妏的個人網站</title>
     <link rel="stylesheet" herf="style.css">
-
-    <!-- 引入 jQuery CDN -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 <body>
-    <h1>Hello! Welcome to My Page!</h1>
-    <button id="btn">點我顯示訊息</button>
-    <p id="msg" style="display: none;">這是 jQuery 顯示的訊息</p>
+    <!-- Header / 導覽列 -->
+    <header>
+        <nav>
+            <a href="#about">About</a>
+            <a herf="#portfolio"></a>
+            <a herf="#contact"></a>
+        </nav>
+    </header>
+    <!-- Hero / 首屏介紹 -->
+    <section id="hero">
+        <h1>Hi, I'm hsuan-wen</h1>
+        <p>這裡是我的個人網站，展示我的作品與技能。</p>
+        <a herf="#portfolio" class="btn">查看作品</a>
+    </section>
 
+    <!-- About / 自我介紹 -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>我目前就讀於輔仁大學醫學資訊學程二年級。</p>
+    </section>
+
+    <!-- Portfolio / 作品集 -->
+    <section id="portfolio">
+        <h2>Portfolio</h2>
+        <div class="projects">
+            <!-- 每個作品卡片 -->
+            <div class="project-card">
+                <img src="project.png" alt="專案圖片">
+                <h3>專案名稱</h3>
+                <p>專案簡介</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / 聯絡方式 -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: aa0903113993@gmail.com</p>
+        <p>GitHub: <a herf="https://github.com/husanwenlin">hsuanwenlin</a></p>
+    </section>
+
+    <!--Footer / 頁尾 -->
+    <footer>
+        <p>© 2025 林宣妏</p>
+    </footer>
+
+    <!-- 先引入 jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- 再引入 script.js -->
     <script src="script.js"></script>
 </body>
 </html>
