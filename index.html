@@ -1,61 +1,158 @@
 <!DOCTYPE html>
-<html lange="zh-Hant">
+<html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
-    <title>林宣妏的個人網站</title>
-    <link rel="stylesheet" herf="style.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>林宣妏的個人頁</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header / 導覽列 -->
-    <header>
-        <nav>
-            <a href="#about">About</a>
-            <a herf="#portfolio"></a>
-            <a herf="#contact"></a>
-        </nav>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="brand">hsuan-wen</div>
+            <nav class="nav">
+                <a href="#about">About</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <button class="hamburger" aria-label="開啟選單">☰</button>
+        </div>
     </header>
     <!-- Hero / 首屏介紹 -->
-    <section id="hero">
-        <h1>Hi, I'm hsuan-wen</h1>
-        <p>這裡是我的個人網站，展示我的作品與技能。</p>
-        <a herf="#portfolio" class="btn">查看作品</a>
+    <section id="hero" class="hero">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <h1>Hi，我是 <span class="accent">hsuan-wen</span> ！</h1>
+                <p class="lead">輔仁大學 <strong>醫學資訊與創新應用學士學位學程</strong> 大二學生</p>
+                <p class="sub">近期學習：Web 基本原理與技術、資料結構、電子病歷、行動裝置程式設計</p>
+
+                <div class="hero-actions">
+                    <a class="btn" href="#portfolio">捲到精選專案</a>
+                    <a class="btn ghost" href="#contact">聯絡我</a>
+                </div>
+
+                <div class="search-line">
+                    <label for="quick-filter">🔎 輸入關鍵字快速篩選：</label>
+                    <input id="quick-filter" type="search" placeholder="技能、課程、專案..." aria-label="快速篩選">
+                </div>
+            </div>
+
+            <div class="hero-avatar">
+                <!-- 把 avatar.jpg 換成你的頭像檔 -->
+                <img src="https://i.postimg.cc/yx6cSfL9/github.jpg" alt="hsuan-wen 的大頭照">
+            </div>
+        </div>
     </section>
 
     <!-- About / 自我介紹 -->
-    <section id="about">
-        <h2>About Me</h2>
-        <p>我目前就讀於輔仁大學醫學資訊學程二年級。</p>
+    <section id="about" class="section">
+        <div class="container">
+            <h2>About</h2>
+            <p class="lead">目前就讀於輔仁大學 醫學資訊與創新應用學士學位學程二年級。</p>
+
+            <div class="cards-row">
+                <div class="card small">
+                    <h3>學習專注</h3>
+                    <p>Web、前後端開發、資料庫、行動裝置程式設計、資料結構</p>
+                </div>
+
+                <div class="card small">
+                    <h3>工具 & 技能（快速篩選區）</h3>
+                    <div id="skills" class="chips">
+                        <!-- 範例技能，script.js 會讀取並篩選 -->
+                        <span class="chip">Java</span>
+                        <span class="chip">HTML</span>
+                        <span class="chip">CSS</span>
+                        <span class="chip">MySQL</span>
+                        <span class="chip">SQL Server 2022</span>
+                        <span class="chip">Git</span>
+                        <span class="chip">Wireshark</span>
+                    </div>
+                </div>
+
+                <div class="card small">
+                    <h3>已修課程與學習背景</h3>
+                    <ul class="course-list">
+                        <li>智慧資安講座</li>
+                        <li>醫學資訊概論、醫療標準及術語</li>
+                        <li>程式設計、計算機概論、微積分</li>
+                        <li>普通心理學</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card goal">
+                <h3>我的目標</h3>
+                <ul>
+                    <li>學會 Web 相關應用</li>
+                    <li>學習更多資訊與 AI 技能</li>
+                    <li>增進英文能力</li>
+                </ul>
+            </div>
+        </div>
     </section>
 
     <!-- Portfolio / 作品集 -->
-    <section id="portfolio">
-        <h2>Portfolio</h2>
-        <div class="projects">
-            <!-- 每個作品卡片 -->
-            <div class="project-card">
-                <img src="project.png" alt="專案圖片">
-                <h3>專案名稱</h3>
-                <p>專案簡介</p>
+    <section id="portfolio" class="section light">
+        <div class="container">
+            <h2>Portfolio</h2>
+                <p class="lead">精選專案（可點選或用上方輸入框快速篩選）</p>
+
+            <div class="projects">
+                <!-- Featured project: GitHub Pages + jQuery RWD 單檔部署 -->
+                <article class="project-card" data-keywords="GitHub Pages jQuery RWD 單檔 部署">
+                    <div class="project-media">
+                        <img src="project-feature.jpg" alt="GitHub Pages + jQuery RWD 單檔部署">
+                    </div>
+                    <div class="project-body">
+                        <h3>GitHub Pages + jQuery RWD 單檔部署</h3>
+                        <p class="meta">捲動示範、RWD、單檔靜態部署</p>
+                        <p>示範如何用一個靜態 repo（單檔 HTML/CSS/JS）完成響應式個人頁面，並用 jQuery 做互動。</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">jQuery</span>
+                            <span class="tag">GitHub Pages</span>
+                        </div>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
 
     <!-- Contact / 聯絡方式 -->
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Email: aa0903113993@gmail.com</p>
-        <p>GitHub: <a herf="https://github.com/husanwenlin">hsuanwenlin</a></p>
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>聯絡我</h2>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <p><strong>GitHub：</strong>
+                        <a href="https://github.com/hsuanwenlin" target="_blank" rel="noopener">github.com/hsuanwenlin</a>
+                    </p>
+                    <p><strong>Email：</strong>
+                        <span id="email-text">aa0903113993@gmail.com</span>
+                        <button id="copy-email" class="small-btn">📋 複製 Email</button>
+                    </p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!--Footer / 頁尾 -->
-    <footer>
-        <p>© 2025 林宣妏</p>
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div>© 2025 林宣妏</div>
+            <div class="small">Powered by GitHub Pages + jQuery</div>
+        </div>
     </footer>
 
-    <!-- 先引入 jQuery -->
+    <!-- 回到頂部按鈕 -->
+    <button id="backToTop" title="回到頂部">⬆ 回到頂部</button>
+    <!-- jQuery 與自訂 script -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <!-- 再引入 script.js -->
     <script src="script.js"></script>
 </body>
 </html>
