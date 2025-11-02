@@ -154,3 +154,44 @@ body{
   .project-card{ width:100%; }
   .hero h1{ font-size:26px; }
 }
+/* Portfolio 純文字列表樣式 */
+.project-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 18px;
+  width: 100%;
+  max-width: 820px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.project-item {
+  background: #ffffff;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(15,15,15,0.05);
+  box-shadow: 0 6px 16px rgba(2,6,23,0.04);
+  transition: transform .18s ease, box-shadow .18s ease, background .18s;
+  cursor: pointer;
+  display: block;
+  color: #111;
+}
+
+.project-item strong { color: var(--accent); }
+
+/* hover & focus */
+.project-item:hover,
+.project-item:focus {
+  transform: translateX(6px);
+  box-shadow: 0 12px 30px rgba(2,6,23,0.08);
+  background: #fbfbff;
+}
+
+/* 小註解 */
+.muted-note {
+  color: var(--muted);
+  margin-top: 12px;
+  text-align: center;
+  font-size: 0.95rem;
+}
